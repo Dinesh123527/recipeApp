@@ -1,0 +1,26 @@
+<div class="bg-img">
+<div class="btn-class">
+<mat-card>
+    <mat-card-header class="text">
+      <mat-card-title style="font-size=20px;font-weight: bold;">Types of Patients</mat-card-title>
+    </mat-card-header><img mat-card-image class="imgs" src="https://www.gundersenhealth.org/app/files/public/9872/eat-evolution-of-heart-healthy-diet.jpg" alt="Photo of Recipe App">
+    <mat-card-actions>
+      <button mat-raised-button class="material" (click)="getRecipeForDiabetic()">Diabetic</button>&nbsp;
+      <button mat-raised-button class="btn" (click)="getRecipeForCardiac()">Cardiac</button>&nbsp;
+      <button mat-raised-button color="warn" (click)="getRecipeForCancer()">Cancer</button>
+    </mat-card-actions>
+</mat-card>
+</div>
+
+
+<div class="main-div" *ngFor="let recipe of recipes">
+<mat-card>
+  <mat-card-content>
+    <span>Recipe Name: {{recipe.recipeName}}</span><br>
+    <span>Reipe Ingredients: {{recipe.ingredients}}</span><br>
+    <span>Recipe Category: {{recipe.category}}</span><br>
+    <span>Recipe Calories: {{recipe.calories}}</span><br>
+  </mat-card-content>
+</mat-card>
+<div>
+</div>

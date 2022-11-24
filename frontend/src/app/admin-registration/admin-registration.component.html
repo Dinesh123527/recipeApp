@@ -1,0 +1,54 @@
+<div class="bg-img">
+<div class="example-container">
+  <div class="form-container">
+  <mat-card>
+      <mat-card-header>
+        <mat-card-title  style="text-align: center"> Admin Sign-up Page </mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="row">
+        <form [formGroup] = "adminRegisterForm" (ngSubmit) = "onSubmit()">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> First Name </mat-label>
+            <input matInput formControlName="adminFirstName" placeholder="First Name" required>
+            <mat-error *ngIf="adminRegisterForm.get('adminFirstName')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminFirstName')?.hasError('minlength')"> First Name Must be at least 4 Characters </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminFirstName')?.hasError('maxlength')"> First Name Should not Exceed 20 Characters </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminFirstName')?.hasError('pattern')"> Invalid First Name </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Last Name </mat-label>
+            <input matInput formControlName="adminLastName" placeholder="Last Name" required>
+            <mat-error *ngIf="adminRegisterForm.get('adminLastName')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminLastName')?.hasError('minlength')"> Last Name Must be at least 3 Characters </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminLasttName')?.hasError('maxlength')"> Last Name Should not Exceed 15 Characters </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminLastName')?.hasError('pattern')"> Invalid Last Name </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> User Name </mat-label>
+            <input matInput formControlName="adminUserName" placeholder="User Name" required>
+            <mat-error *ngIf="adminRegisterForm.get('adminUserName')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminUserName')?.hasError('minlength')"> User Name Must be at least 5 Characters </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminUserName')?.hasError('maxlength')"> User Name Should not Exceed 15 Characters </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Password </mat-label>
+            <input matInput formControlName="adminPassword" type = "password" placeholder="Password" required>
+            <mat-error *ngIf="adminRegisterForm.get('adminPassword')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminPassword')?.hasError('minlength')"> Password Must be at least 6 Characters </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminPassword')?.hasError('maxlength')"> Password Should not Exceed 15 Characters</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Mobile NO </mat-label>
+            <input matInput formControlName="adminContactNo" placeholder="Mobile NO" required>
+            <mat-error *ngIf="adminRegisterForm.get('adminContactNo')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="adminRegisterForm.get('adminContactNo')?.hasError('pattern')"> Invalid Field </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="success" (click)="register()">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+        </form>
+      </mat-card-content>
+  </mat-card>
+
+</div>
+</div>
+</div>

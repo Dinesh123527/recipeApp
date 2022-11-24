@@ -1,0 +1,56 @@
+<div class="bg-img">
+<div class="example-container">
+  <div class="form-container">
+  <mat-card >
+      <mat-card-header>
+        <mat-card-title>Add Recipe</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="row">
+        <form [formGroup]="addRecipeForm">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Recipe Name</mat-label>
+            <input matInput formControlName="recipeName" placeholder="Enter a Recipe" required>
+            <mat-error *ngIf="addRecipeForm.get('recipeName')?.hasError('required')"> Recipe Name is required </mat-error>
+            <mat-error *ngIf="addRecipeForm.get('recipeName')?.hasError('minlength')"> Recipe Name Must be at least 3 Characters </mat-error>
+            <mat-error *ngIf="addRecipeForm.get('recipeName')?.hasError('maxlength')"> Recipe Name Should not Exceed 25 Characters </mat-error>
+            <mat-error *ngIf="addRecipeForm.get('recipeName')?.hasError('pattern')"> Invalid Recipe Name </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Recipe Ingredients</mat-label>
+            <input matInput formControlName="recipeIngredients" placeholder="Enter Ingredients" required>
+            <mat-error *ngIf="addRecipeForm.get('recipeIngredients')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="addRecipeForm.get('recipeIngredients')?.hasError('minlength')"> Please Enter atleast 4 Characters </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Preparation Time</mat-label>
+            <input matInput formControlName="recipePrepTime" placeholder="Enter Preparation Time" required>
+            <mat-error *ngIf="addRecipeForm.get('recipePrepTime')?.hasError('required')"> This Field is required </mat-error>
+            <mat-error *ngIf="addRecipeForm.get('recipePrepTime')?.hasError('pattern')"> Invalid Field </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Recipe Category</mat-label>
+            <mat-select formControlName="recipeCategory" required>
+              <mat-option [value]="recipe" *ngFor="let recipe of categories">{{recipe}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="addRecipeForm.get('recipeCategory')?.hasError('required')"> This Field is required </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Calories</mat-label>
+            <mat-select formControlName="recipeCalories" required>
+              <mat-option [value]="calorie" *ngFor="let calorie of calories">{{calorie}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="addRecipeForm.get('recipeCalories')?.hasError('required')"> This Field is required </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-fieldarea" appearance="outline">
+             <mat-label>Recipe Notes</mat-label>
+             <textarea matInput rows="5" cols="40" formControlName="recipeNote" placeholder="Enter recipe Notes" required></textarea>
+             <mat-error *ngIf="addRecipeForm.get('recipeNote')?.hasError('required')"> This Field is required </mat-error>
+             <mat-error *ngIf="addRecipeForm.get('recipeNote')?.hasError('minlength')"> Recipe Notes Must be Atleast 8 Characters</mat-error>
+          </mat-form-field><br>
+          <button mat-raised-button color="success" (click)="addRecipe()">Add Recipe</button>
+        </form>
+      </mat-card-content>
+  </mat-card>
+</div>
+</div>
+</div>

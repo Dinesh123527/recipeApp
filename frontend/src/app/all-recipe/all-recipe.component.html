@@ -1,0 +1,21 @@
+<div class = "bg-img">
+<div class="search-bar">
+<mat-card id="card">
+  <mat-card-content>
+    <input type="text" placeholder="Search with Name..." [(ngModel)]="query">
+  </mat-card-content>
+</mat-card>
+</div>
+<div class="main-div" *ngFor="let recipe of recipes | filter:query: 'recipeName'">
+<mat-card class ="tp-card">
+  <mat-card-header class="text">
+      <mat-card-title>{{recipe.recipeName}}</mat-card-title>
+  </mat-card-header><img mat-card-image class="imgs" src="https://st3.depositphotos.com/10654668/15316/i/600/depositphotos_153165422-stock-photo-person-cooking-with-cookbook.jpg" alt="Photo of Recipe App">
+  <mat-card-actions>
+    <button mat-raised-button class="new" (click)="viewRecipe(recipe.id)">View Recipe</button>&nbsp;
+    <button mat-raised-button class="ok" *ngIf="dataAdmin==='Admin'" (click)="updateRecipe(recipe.id)">Update Recipe</button>&nbsp;
+    <button mat-raised-button color="warn" *ngIf="dataAdmin==='Admin'" (click)="deleteRecipe(recipe.id)">Delete Recipe</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+</div>

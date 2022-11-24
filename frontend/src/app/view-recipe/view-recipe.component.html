@@ -1,0 +1,23 @@
+<div class="bg-img">
+<div class="main-div">
+<mat-card class="tp-card">
+  <img mat-card-image class="imgs" src="https://www.pngall.com/wp-content/uploads/8/Cooking-Recipe-PNG-High-Quality-Image.png" alt="Photo of a Recipe App">
+  <mat-card-header class="text">
+    <mat-card-title style= "font-size: 30px; font-weight: bold;">{{currentRecipe.recipeName}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <span class="angular-with-newlines" style= "font-size: 18px; color:green">Ingredients: {{currentRecipe.ingredients}}</span><br>
+    <span style= "font-size: 18px; color:Indigo">Preparation Time: {{currentRecipe.prepTime}} Minutes</span><br>
+    <span style= "font-size: 18px; color:blue">Category: {{currentRecipe.category}}</span><br>
+    <span style= "font-size: 18px; color:red;">Calories: {{currentRecipe.calories}}</span><br><br>
+    <span style= "font-size: 20px; font-weight: bold; color:darkgreen">Preparation:</span><br>
+    <span class= "angular-with-newlines" style= "font-size: 14px; color: black">{{currentRecipe.recipeNote}}</span>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button class="ok" *ngIf="dataAdmin==='Admin'" (click)="updateRecipe(currentRecipe.id)">Update Recipe</button>&nbsp;
+    <button mat-raised-button color="warn" *ngIf="dataAdmin==='Admin'" (click)="deleteRecipe(currentRecipe.id)">Delete Recipe</button>&nbsp;&nbsp;
+    <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+</div>

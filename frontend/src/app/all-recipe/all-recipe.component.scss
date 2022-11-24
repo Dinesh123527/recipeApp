@@ -1,0 +1,51 @@
+.search-bar{
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+.main-div{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.imgs{
+
+  width: 500px;
+  height: 300px;
+}
+
+.text{
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 50px;
+}
+
+.bg-img {
+  background-image: url(
+"../../assets/Recipe11.png");
+  min-height: 100%;
+  height: auto;
+  background-size: cover;
+
+}
+.tp-card{
+  margin-left: 600px;
+  margin-top: 50px;
+}
+
+.new{
+  background-color: blue;
+}
+
+.ok{
+  background-color: orange;
+}

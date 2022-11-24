@@ -1,0 +1,64 @@
+.main-div{
+  height: 140vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgs{
+  width: 300px;
+  height: 200px;
+  justify-content: center;
+}
+
+.bg-img {
+  background-image: url(
+"../../assets/Recipe11.png");
+  min-height: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+.normal{
+  background-color: blue;
+}
+
+.text{
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 100px;
+  color: darkslategray
+}
+
+.inner-text{
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: red;
+}
+
+.ok{
+  background-color: orange;
+}
+
+.tp-card{
+  margin-left: 200px;
+  margin-top: 50px;
+  margin-right: 180px;
+}
+
+
+.mat-card{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.colr{
+  background-color: green;
+}
+
+.angular-with-newlines{
+  white-space:pre-wrap;
+}
+
+
+
